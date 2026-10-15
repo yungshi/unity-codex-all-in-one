@@ -1,10 +1,10 @@
-# Unity + Codex All-in-One
+# unity-codex-connect
 
-Windows에서 Unity와 Codex의 설치·연동, JSON 복구, 전체 제거를 한 파일로 실행하는 도구입니다.
+unity-codex-connect는 Windows에서 Unity와 Codex의 설치·연동, JSON 복구, 전체 제거를 한 파일로 실행하는 도구입니다.
 
 ## 다운로드 및 실행
 
-[Unity-Codex-All-in-One.bat 다운로드](https://github.com/yungshi/unity-codex-all-in-one/raw/refs/heads/main/Unity-Codex-All-in-One.bat)
+[unity-codex-connect.bat 다운로드](https://github.com/yungshi/unity-codex-connect/raw/refs/heads/main/unity-codex-connect.bat)
 
 파일을 PC에 저장한 뒤 더블클릭하세요. 별도 PS1 파일 없이 BAT 파일 하나로 실행됩니다.
 

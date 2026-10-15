@@ -1,6 +1,6 @@
 @echo off
 setlocal
-title Unity Codex All-in-One
+title unity-codex-connect
 chcp 65001 >nul
 set "UNITY_CODEX_BUNDLE=%~f0"
 powershell.exe -NoLogo -NoProfile -STA -ExecutionPolicy Bypass -Command "try { $text = [IO.File]::ReadAllText($env:UNITY_CODEX_BUNDLE, [Text.Encoding]::UTF8); $marker = '#==UNITY_CODEX_POWERSHELL=='; $offset = $text.LastIndexOf($marker); if ($offset -lt 0) { throw 'Embedded script was not found.' }; & ([scriptblock]::Create($text.Substring($offset + $marker.Length))) } catch { Write-Host $_ -ForegroundColor Red; exit 1 }"
@@ -1122,7 +1122,7 @@ function Test-Connection {
 }
 
 function Invoke-BundleInstall {
-    Write-Section 'Unity + Codex 설치 / 연동'
+    Write-Section 'unity-codex-connect 설치 / 연동'
     Write-Host '지원 환경: Windows 10 21H1 이상 / Unity 6.0 이상'
     $project = Get-SelectedProject
     if (-not $project) { Write-Notice '취소했습니다.'; return }
@@ -1163,7 +1163,7 @@ function Invoke-BundleRepair {
 }
 
 function Invoke-BundleUninstall {
-    Write-Section 'Unity + Codex 전체 제거'
+    Write-Section 'unity-codex-connect 전체 제거'
     Write-Host '제거 대상:' -ForegroundColor Yellow
     Write-Host '- 선택 프로젝트의 Pipeline 패키지 참조, Unity MCP, Unity Skill'
     Write-Host '- 사용자 전역 설정의 Unity MCP, Unity 공식 Codex 플러그인'
@@ -1262,9 +1262,9 @@ https://github.com/Unity-Technologies/unity-agent-plugin
 }
 
 function Start-BundleMenu {
-    $Host.UI.RawUI.WindowTitle = 'Unity + Codex 통합 도구'
+    $Host.UI.RawUI.WindowTitle = 'unity-codex-connect'
     while ($true) {
-        Write-Section 'Unity + Codex 통합 도구'
+        Write-Section 'unity-codex-connect'
         Write-Host '  1. 설치 / 연동'
         Write-Host '  2. Unity JSON 복구'
         Write-Host '  3. 전체 제거' -ForegroundColor Yellow
